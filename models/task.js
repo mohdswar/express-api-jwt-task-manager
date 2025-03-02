@@ -25,7 +25,7 @@ const taskSchema = new mongoose.Schema(
         category: {
             type: String,
             required: true,
-            enum: ['News', 'Sports', 'Games', 'Movies', 'Music', 'Television'],
+            enum: ['Not started', 'In process', 'Done',],
         },
         author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
         comments: [commentSchema],
