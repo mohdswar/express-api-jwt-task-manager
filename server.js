@@ -14,6 +14,7 @@ const verifyToken = require('./middleware/verify-token');
 const testJWTRouter = require('./controllers/test-jwt');
 const usersRouter = require('./controllers/users');
 const profilesRouter = require('./controllers/profiles');
+const tasksRouter = require('./controllers/tasks')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -29,7 +30,7 @@ app.use('/users', usersRouter);
 // Protected Routes
 app.use(verifyToken)
 app.use('/profiles', profilesRouter);
-
+app.use('/tasks',tasksRouter)
 app.listen(PORT, () => {
   console.log('The express app is ready!');
 });
