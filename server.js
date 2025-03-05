@@ -20,7 +20,7 @@ const tasksRouter = require('./controllers/tasks')
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({ origin: process.env.CORS_ORIGIN }));
 app.use(morgan('dev'));
 app.use(express.json());
 
